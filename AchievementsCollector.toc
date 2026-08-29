@@ -1,0 +1,39 @@
+## Interface: 50504, 120007, 120100
+## Title: Achievements Collector
+## Author: Thiago Franco (Topolino)
+## Version: 1.0.0
+## X-Curse-Project-ID: 1673302
+## SavedVariables: AchievementsCollectorDB
+## SavedVariablesPerCharacter: AchievementsCollectorSharedDB
+## IconTexture: Interface\AddOns\AchievementsCollector\ACIcon.png
+
+
+Libs\embeds.xml
+Libs\LibStub\LibStub.lua
+Libs\LibSharedMedia-3.0\lib.xml
+Libs\libdatabroker-1-1\LibDataBroker-1.1.lua
+Libs\LibDBIcon-1.0\lib.xml
+Libs\LibSerialize\lib.xml
+Libs\LibDeflate\LibDeflate.lua
+
+#Versioning Information
+Version_Data.lua
+
+# Localization
+localization\enUS.lua
+localization\ptBR.lua
+
+localization\Catalog\enUS.lua
+localization\Catalog\ptBR.lua
+
+Utils\3rdPartyFix.lua
+Utils\ImportModule.lua
+Utils\ExportModule.lua
+
+Data.lua
+AddAchievements.lua
+AchievementsCollector.lua
+Settings.lua
+AchievementsContextMenu.lua
+AchievementsCatalog.lua
+Catalog.lua
