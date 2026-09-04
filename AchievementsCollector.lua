@@ -923,6 +923,16 @@ do
         }
     end
 
+    -- Função auxiliar para verificar se um ID já existe em uma tabela
+    local function TableContains(tbl, val)
+        for _, v in ipairs(tbl) do
+            if v == val then
+                return true
+            end
+        end
+        return false
+    end
+
     local function ShowTabContextMenu(anchor, listKey)
         if not listKey then return end
         MenuUtil.CreateContextMenu(anchor, function(owner, root)
@@ -1031,6 +1041,78 @@ do
                 end
                 StaticPopup_Show("HIDDEN_ACHIEVEMENTS_COPY_ID", nil, nil, achievementID)
             end)
+
+            -- Salvar para lista personalizada
+            local subMenu = root:CreateButton(L["Add_To_Custom_List"])
+            
+            if acTable and acTable.DB and acTable.DB.CustomLists then
+                for presetKey, presetData in pairs(acTable.DB.CustomLists) do
+                    local presetName = presetData.name or presetKey
+                    
+                    subMenu:CreateButton(presetName, function()
+                        if not presetData.ids then
+                            presetData.ids = {}
+                        end
+
+                        AchievementsLists = AchievementsLists or {}
+                        AchievementsLists[presetKey] = presetData.ids
+                        
+                        if not TableContains(presetData.ids, achievementID) then
+                            table.insert(presetData.ids, achievementID)
+                            print(string.format(string.format("|cff00ff00[%s]|r %s ", L["AddonName_Interface"], L["Added_Achievement_Message"]), achievementID, presetName))
+
+                            acTable.DB = acTable.DB or {}
+                            acTable.DB.CustomLists = acTable.DB.CustomLists or {}
+                            acTable.DB.CustomLists[presetKey] = acTable.DB.CustomLists[presetKey] or { name = presetName, ids = {} }
+                            acTable.DB.CustomLists[presetKey].ids = presetData.ids
+
+                            AchievementsCollector:UpdateSettings()
+                        else
+                            print(L["Achievement_Already_On_List"])
+                        end
+
+                        if acTable.RefreshMainTrackerUI then acTable:RefreshMainTrackerUI() end
+                        if LibStub and LibStub("AceConfigRegistry-3.0", true) then
+                            LibStub("AceConfigRegistry-3.0"):NotifyChange("CustomAchievementTracker_AddLists")
+                        end
+                    end)
+                end
+            else
+                subMenu:CreateButton(L["No_List_Found"], function() end)
+            end
+
+            -- Remover da lista personalizada
+            local removeSubMenu = root:CreateButton(L["Remove_From_Custom_List"])
+            local hasAnyPreset = false
+
+            if acTable and acTable.DB and acTable.DB.CustomLists then
+                for presetKey, presetData in pairs(acTable.DB.CustomLists) do
+                    if presetData.ids and TableContains(presetData.ids, achievementID) then
+                        hasAnyPreset = true
+                        removeSubMenu:CreateButton((presetData.name or presetKey), function()
+                            for i, id in ipairs(presetData.ids) do
+                                if id == achievementID then
+                                    local dialog = StaticPopup_Show("HAT_CONFIRM_REMOVE_ACH", achievementID, presetData.name, {achievementID, presetKey})
+                                    if dialog then
+                                        dialog:ClearAllPoints()
+                                        dialog:SetPoint("CENTER", Tracker, "CENTER", 0, 0)
+                                    end
+                                    break
+                                end
+                            end
+                        
+                            if acTable.RefreshMainTrackerUI then acTable:RefreshMainTrackerUI() end
+                            if LibStub and LibStub("AceConfigRegistry-3.0", true) then
+                                LibStub("AceConfigRegistry-3.0"):NotifyChange("CustomAchievementTracker_AddLists")
+                            end
+                        end)
+                    end
+                end
+            end
+
+            if not hasAnyPreset then
+                removeSubMenu:CreateButton(L["Not_in_a_List"], function() end)
+            end
 
             local isCustom = listKey and acTable and acTable.DB and acTable.DB.CustomLists and acTable.DB.CustomLists[listKey]
             if isCustom then

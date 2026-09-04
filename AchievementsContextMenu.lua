@@ -36,6 +36,40 @@ local function TableContains(tbl, val)
     return false
 end
 
+if StaticPopupDialogs["HAT_CONFIRM_REMOVE_ACH"] == nil then
+        StaticPopupDialogs["HAT_CONFIRM_REMOVE_ACH"] = {
+            text = L["Confirm_Remove_Message"],
+            button1 = L["button_Confirm"],
+            button2 = L["button_Cancel"],
+            OnAccept = function(self, data)
+                local achievementID, listKey = data[1], data[2]
+                if listKey and acTable and acTable.DB and acTable.DB.CustomLists and acTable.DB.CustomLists[listKey] then
+                    local ids = acTable.DB.CustomLists[listKey].ids
+                    if ids then
+                        for i = #ids, 1, -1 do
+                            if ids[i] == achievementID then
+                                table.remove(ids, i)
+                                break
+                            end
+                        end
+                        AchievementsLists[listKey] = acTable.DB.CustomLists[listKey].ids
+                        if AchievementsCollector and AchievementsCollector.UpdateSettings then
+                            AchievementsCollector:UpdateSettings()
+                        end
+                        if acTable and acTable.RefreshMainTrackerUI then acTable:RefreshMainTrackerUI() end
+                        if LibStub and LibStub("AceConfigRegistry-3.0", true) then
+                            LibStub("AceConfigRegistry-3.0"):NotifyChange("AchievementsCollector_AddLists")
+                        end
+                    end
+                end
+            end,
+            timeout = 0,
+            whileDead = true,
+            hideOnEscape = true,
+            preferredIndex = 3,
+        }
+    end
+
 local function ShowMyCustomContextMenu(anchorFrame, achievementID)
     if not achievementID then return end
 
@@ -115,9 +149,11 @@ local function ShowMyCustomContextMenu(anchorFrame, achievementID)
                     removeSubMenu:CreateButton((presetData.name or presetKey), function()
                         for i, id in ipairs(presetData.ids) do
                             if id == achievementID then
-                                table.remove(presetData.ids, i)
-                                print(L["Achievement_Removed_From_List"])
-                                AchievementsCollector:UpdateSettings()
+                                local dialog = StaticPopup_Show("HAT_CONFIRM_REMOVE_ACH", achievementID, presetData.name, {achievementID, presetKey})
+                                if dialog then
+                                    dialog:ClearAllPoints()
+                                    dialog:SetPoint("CENTER", Tracker, "CENTER", 0, 0)
+                                end
                                 break
                             end
                         end
