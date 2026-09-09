@@ -20,5 +20,5 @@
 --
 --------------------------------------------------------------------------------
 
-C_AC_VERSION_UID = 1000002
-C_AC_VERSION_SEMANTIC_NUMBER = "1.0.2"
+C_AC_VERSION_UID = 1000003
+C_AC_VERSION_SEMANTIC_NUMBER = "1.0.3"

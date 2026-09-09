@@ -19,6 +19,8 @@ L_Catalog_Titles["MN-Season-2-PvP-Battlegrounds-Blitz"] = "Midnight's Ranked Lig
 L_Catalog_Titles["MOP-Classic-Pandaria-Explorer"] = "Pandaria Exploration"
 L_Catalog_Titles["MOP-Classic-Pandaria-Lorewalker"] = "Pandaria Loremaster"
 L_Catalog_Titles["MOP-Classic-Pandaria-Legendary-Cloak"] = "Wrathion Quests - Legendary Cloak"
+L_Catalog_Titles["MN-Housing-Lumberjack"] = "Lumberjack"
+L_Catalog_Titles["MN-Professions"] = "Midnight Professions"
 
 L_Catalog_Description["MN-Season-2-Myth-Portals"] = "Achievements related to the Midnight Season 2 Hero's Path."
 L_Catalog_Description["MN-Season-2-Delves"] = "Midnight Season 2 Delve achievements."
@@ -32,3 +34,5 @@ L_Catalog_Description["MN-Season-2-PvP-Battlegrounds-Blitz"] = "Midnight's Ranke
 L_Catalog_Description["MOP-Classic-Pandaria-Explorer"] = "Achievements for Exploring the regions of Pandaria."
 L_Catalog_Description["MOP-Classic-Pandaria-Lorewalker"] = "Achievements for completing main story quests in Pandaria zones."
 L_Catalog_Description["MOP-Classic-Pandaria-Legendary-Cloak"] = "Achievements for the Wrathion campaign in Pandaria – Legendary Cloak."
+L_Catalog_Description["MN-Housing-Lumberjack"] = "Wood-gathering achievements for crafting housing items."
+L_Catalog_Description["MN-Professions"] = "Midnight profession progression achievements."
