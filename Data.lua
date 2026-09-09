@@ -26,7 +26,7 @@ local L_Catalog_Description = acTable.L_Catalog_Description
 
 AchievementsListsDictionary = {
     ["MN-Season-2-Myth-Portals"] = {62439, 16640, 62443, 62444, 62441, 62437, 62440, 62438},
-    ["MN-Season-2-Delves"] = {62889, 62890, 62891, 62892, 62893, 62894, 62895, 62897, 63436, 63437, 63170, 63171, 63434, 63435, 63326, 63332, 63333},
+    ["MN-Season-2-Delves"] = {62889, 62890, 62891, 62892, 62893, 62894, 62895, 62897, 63436, 63437, 63170, 63171, 63434, 63435, 63326, 63332, 63333, 63433},
     ["MN-Season-2-AOTC-CE"] = {63650, 63651},
     ["MN-Season-2-Myth-Plus"] = {62445, 62446, 62447, 62448, 62449},
     ["MN-Season-2-Crests"] = {62410, 62411, 62412, 62414},
@@ -37,6 +37,9 @@ AchievementsListsDictionary = {
     ["MOP-Classic-Pandaria-Explorer"] = {6351, 6969, 6975, 6976, 6977, 6978, 6979, 6974},
     ["MOP-Classic-Pandaria-Lorewalker"] = {6300, 6301, 6535, 6537, 6539, 6540, 6541},
     ["MOP-Classic-Pandaria-Legendary-Cloak"] = {7533, 7534, 8008, 7535, 7536, 8325},
+    ["MN-Housing-Lumberjack"] = {62357, 62358, 62359, 62360, 62361, 62362, 62363, 62364, 62365, 62366, 62369, 62370,},
+    ["MN-Professions"] = {62239, 42788, 62223, 62240, 42792, 62232, 62241, 42787, 62233, 62242, 42798, 62234, 62243, 42796, 62235, 62244, 42789, 62236, 62245, 42786, 62237, 62246, 42794, 62238, 62250, 42793, 62247, 62251, 42791, 62248, 62252, 42790, 62249, 42795, 42797, 61439,},
+
     
 }
 
@@ -53,6 +56,8 @@ AchievementsListsDictionaryNames = {
     ["MOP-Classic-Pandaria-Explorer"] = L_Catalog_Titles["MOP-Classic-Pandaria-Explorer"],
     ["MOP-Classic-Pandaria-Lorewalker"] = L_Catalog_Titles["MOP-Classic-Pandaria-Lorewalker"],
     ["MOP-Classic-Pandaria-Legendary-Cloak"] = L_Catalog_Titles["MOP-Classic-Pandaria-Legendary-Cloak"],
+    ["MN-Housing-Lumberjack"] = L_Catalog_Titles["MN-Housing-Lumberjack"],
+    ["MN-Professions"] = L_Catalog_Titles["MN-Professions"],
     
 }
 
@@ -69,7 +74,9 @@ AchievementsListsDictionaryDetails = {
     ["MOP-Classic-Pandaria-Explorer"] = L_Catalog_Description["MOP-Classic-Pandaria-Explorer"],
     ["MOP-Classic-Pandaria-Lorewalker"] = L_Catalog_Description["MOP-Classic-Pandaria-Lorewalker"],
     ["MOP-Classic-Pandaria-Legendary-Cloak"] = L_Catalog_Description["MOP-Classic-Pandaria-Legendary-Cloak"],
-    
+    ["MN-Housing-Lumberjack"] = L_Catalog_Description["MN-Housing-Lumberjack"],
+    ["MN-Professions"] = L_Catalog_Description["MN-Professions"],
+
 }
 
 AchievementsListsDictionaryCover = {
@@ -85,6 +92,8 @@ AchievementsListsDictionaryCover = {
     ["MOP-Classic-Pandaria-Explorer"] = 6351,
     ["MOP-Classic-Pandaria-Lorewalker"] = 6974,
     ["MOP-Classic-Pandaria-Legendary-Cloak"] = 7533,
+    ["MN-Housing-Lumberjack"] = 62357,
+    ["MN-Professions"] = 61439,
     
 }
 
@@ -101,5 +110,7 @@ AchievementsListsDictionaryGameVersion = {
     ["MOP-Classic-Pandaria-Explorer"] = "Classic",
     ["MOP-Classic-Pandaria-Lorewalker"] = "Classic",
     ["MOP-Classic-Pandaria-Legendary-Cloak"] = "Classic",
+    ["MN-Housing-Lumberjack"] = "Retail",
+    ["MN-Professions"] = "Retail",
     
 }

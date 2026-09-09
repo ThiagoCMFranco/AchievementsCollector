@@ -19,6 +19,8 @@ L_Catalog_Titles["MN-Season-2-PvP-Battlegrounds-Blitz"] = "Ataque Relâmpago Ran
 L_Catalog_Titles["MOP-Classic-Pandaria-Explorer"] = "Exploração de Pandaria"
 L_Catalog_Titles["MOP-Classic-Pandaria-Lorewalker"] = "Historiador de Pandaria"
 L_Catalog_Titles["MOP-Classic-Pandaria-Legendary-Cloak"] = "Missões de Whrathion - Capa Lendária"
+L_Catalog_Titles["MN-Housing-Lumberjack"] = "Lenhador"
+L_Catalog_Titles["MN-Professions"] = "Profissões de Midnight"
 
 L_Catalog_Description["MN-Season-2-Myth-Portals"] = "Conquistas relacionadas ao caminho do herói da temporada 2 de Midnight."
 L_Catalog_Description["MN-Season-2-Delves"] = "Conquistas de imersões da segunda temporada de Midnight."
@@ -32,6 +34,8 @@ L_Catalog_Description["MN-Season-2-PvP-Battlegrounds-Blitz"] = "Conquistas de At
 L_Catalog_Description["MOP-Classic-Pandaria-Explorer"] = "Conquistas de exploração das regiões de Pandaria."
 L_Catalog_Description["MOP-Classic-Pandaria-Lorewalker"] = "Conquistas de missões de história das regiões de Pandaria."
 L_Catalog_Description["MOP-Classic-Pandaria-Legendary-Cloak"] = "Conquistas da campanha de Wrathion em Pandaria - Capa Lendária."
+L_Catalog_Description["MN-Housing-Lumberjack"] = "Conquistas de coleta de madeira para confecção de itens de moradia."
+L_Catalog_Description["MN-Professions"] = "Conquistas de progressão de profissões de Midnight."
 
 
 
