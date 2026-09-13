@@ -76,6 +76,29 @@ local function ShowMyCustomContextMenu(anchorFrame, achievementID)
     MenuUtil.CreateContextMenu(anchorFrame, function(owner, rootDescription)
         rootDescription:CreateTitle(L["Achievement_Options"] .. " (" .. achievementID .. ")")
         
+        -- Exibir Link Externo
+        rootDescription:CreateButton(L["External_Link_Context_Menu_Item"], function()
+            if StaticPopupDialogs["EXTERNAL_LINK_COPY"] == nil then
+                StaticPopupDialogs["EXTERNAL_LINK_COPY"] = {
+                    text = L["External_Link_Message"],
+                    button1 = L["button_Close"],
+                    hasEditBox = true,
+                    editBoxWidth = 200,
+                    OnShow = function(self, data)
+                        if self.EditBox then
+                            self.EditBox:SetText('https://www.wowhead.com/achievement=' .. tostring(data))
+                            self.EditBox:HighlightText()
+                        end
+                    end,
+                    timeout = 0,
+                    whileDead = true,
+                    hideOnEscape = true,
+                    preferredIndex = 3,
+                }
+            end
+            StaticPopup_Show("EXTERNAL_LINK_COPY", nil, nil, achievementID)
+        end)
+
         -- Copiar código da conquista
         rootDescription:CreateButton(L["Copy_Achievement_ID"], function()
             if StaticPopupDialogs["HIDDEN_ACHIEVEMENTS_COPY_ID"] == nil then
