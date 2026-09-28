@@ -86,7 +86,7 @@ local function ShowMyCustomContextMenu(anchorFrame, achievementID)
                     editBoxWidth = 200,
                     OnShow = function(self, data)
                         if self.EditBox then
-                            self.EditBox:SetText('https://www.wowhead.com/achievement=' .. tostring(data))
+                            self.EditBox:SetText((AchievementsCollectorDB.ExternalLink or 'https://www.wowhead.com/achievement=') .. tostring(data))
                             self.EditBox:HighlightText()
                         end
                     end,
