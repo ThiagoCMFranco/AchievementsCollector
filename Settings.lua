@@ -142,6 +142,7 @@ function HAT_LoadSettings()
     local chkLockDragDrop = AceGUI:Create("CheckBox")
     local chkHideMinimapIcon = AceGUI:Create("CheckBox")
     local chkHideDeveloperCreditOnTooltips = AceGUI:Create("CheckBox")
+    local txtExternalLink = AceGUI:Create("EditBox")
     
     chkLockDragDrop:SetLabel(L["LockDragDrop"])
     chkLockDragDrop:SetCallback("OnValueChanged", function(widget, event, text) 
@@ -165,10 +166,16 @@ function HAT_LoadSettings()
      end)
     chkHideDeveloperCreditOnTooltips:SetWidth(700)
     scrollFrameGeneral:AddChild(chkHideDeveloperCreditOnTooltips)
+
+    txtExternalLink:SetLabel(L["Customize_External_Link"])
+    txtExternalLink:SetWidth(300)
+    txtExternalLink:SetCallback("OnEnterPressed", function(widget, event, text) if text ~= "" then AchievementsCollectorDB.ExternalLink = text else AchievementsCollectorDB.ExternalLink = "https://www.wowhead.com/achievement=" end end)
+    scrollFrameGeneral:AddChild(txtExternalLink)
  
     chkLockDragDrop:SetValue(AchievementsCollectorDB.LockDragDrop)
     chkHideMinimapIcon:SetValue(AchievementsCollectorDB.HideMinimapIcon)
     chkHideDeveloperCreditOnTooltips:SetValue(AchievementsCollectorDB.HideDeveloperCreditOnTooltips)   
+    txtExternalLink:SetText(AchievementsCollectorDB.ExternalLink or "https://www.wowhead.com/achievement=")   
 
 end
 
