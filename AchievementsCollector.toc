@@ -1,7 +1,7 @@
-## Interface: 50504, 120007, 120100
+## Interface: 16001, 50504, 120007, 120100
 ## Title: Achievements Collector
 ## Author: Thiago Franco (Topolino)
-## Version: 1.0.5
+## Version: 1.0.6
 ## X-Curse-Project-ID: 1673302
 ## SavedVariables: AchievementsCollectorDB
 ## SavedVariablesPerCharacter: AchievementsCollectorSharedDB
@@ -27,6 +27,7 @@ localization\Catalog\enUS.lua
 localization\Catalog\ptBR.lua
 
 Utils\3rdPartyFix.lua
+Utils\Functions.lua
 Utils\ImportModule.lua
 Utils\ExportModule.lua
 

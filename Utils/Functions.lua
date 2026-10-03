@@ -20,5 +20,45 @@
 --
 --------------------------------------------------------------------------------
 
-C_AC_VERSION_UID = 1000006
-C_AC_VERSION_SEMANTIC_NUMBER = "1.0.6"
+ACLFunctions = {}
+
+local name, acTable = ...
+local L = acTable.L 
+
+local githubLink = "https://github.com/ThiagoCMFranco/AchievementsCollector"
+
+-- Lista de versões que estão em fase de testes
+local versoesEmTeste = {
+    "1.60.1",
+}
+
+function ACLFunctions.VerificarVersaoDoJogo(silent)
+    local gameVersion, build, date, tocVersion = GetBuildInfo()
+    
+    local exibirMensagem = false
+    
+    for _, versao in ipairs(versoesEmTeste) do
+        if gameVersion == versao then
+            exibirMensagem = true
+            break
+        end
+    end
+    
+    if exibirMensagem then
+        local mensagem = string.format(
+            L["Version_Disclaimer"],
+            L["AddonName_Interface"],
+            githubLink
+        )
+
+        if silent then
+            return "\n\n\n\n|cFFFFFF00" .. mensagem .. "|r\n\n"
+        else
+            print(mensagem)
+        end
+
+        return ""
+    end
+
+    return ""
+end

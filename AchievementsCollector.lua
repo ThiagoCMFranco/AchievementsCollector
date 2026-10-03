@@ -761,6 +761,9 @@ InitFrame:SetScript("OnEvent", function(self, event, addonName)
         end
 
         InitializeTabs()
+
+        ACLFunctions.VerificarVersaoDoJogo()
+
         self:UnregisterEvent("ADDON_LOADED")
     end
 end)
