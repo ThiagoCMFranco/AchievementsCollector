@@ -4,12 +4,12 @@
 
 This is a World of Warcraft addon.  
 
-Create custom lists to track your achievements.  
+Create custom lists to track your achievements. Track hidden achievements for World of Warcraft Forever Lagacy Points System. 
 
 Game Addon Categories: Achievements, Miscellaneous.  
 
 Compatible with: Midnight (Retail) and Mists of Pandaria Classic.  
-Pending tests: Burning Crusade Anniversary and Classic Era.  
+Pending tests: Forever, Burning Crusade Anniversary and Classic Era.  
 
 Create custom lists to track your achievements, monitor and manage your objectives. A tool designed to optimize collectors' organization and guide casual players looking for new goals.
 
