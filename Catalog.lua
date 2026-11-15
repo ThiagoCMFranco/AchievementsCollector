@@ -61,7 +61,15 @@ local CARD_BG_R, CARD_BG_G, CARD_BG_B = 0.1, 0.1, 0.1
 local activeListKey = nil
 local selectedDicionaryKey = nil
 
-local CatalogMainFrame = CreateFrame("Frame", "AchievementsCollectorCatalogMainFrame", UIParent, "BasicFrameTemplateWithInset")
+local CatalogMainFrame
+if AchievementsCollector_Game_Flavor == "Forever" then 
+        CatalogMainFrame = CreateFrame("Frame", "AchievementsCollectorCatalogMainFrame", UIParent, "PortraitFrameTemplate")
+
+        ButtonFrameTemplate_HidePortrait(CatalogMainFrame)
+    else
+        CatalogMainFrame = CreateFrame("Frame", "AchievementsCollectorCatalogMainFrame", UIParent, "BasicFrameTemplateWithInset")
+    end
+
 CatalogMainFrame:SetSize(660, 480)
 CatalogMainFrame:SetPoint("CENTER")
 CatalogMainFrame:SetMovable(true)
@@ -75,9 +83,22 @@ CatalogMainFrame:Hide()
 CatalogMainFrame:SetFrameStrata("MEDIUM")
 CatalogMainFrame:SetFrameLevel(20)
 
-CatalogMainFrame.title = CatalogMainFrame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
-CatalogMainFrame.title:SetPoint("CENTER", CatalogMainFrame.TitleBg, "CENTER", 5, 0)
-CatalogMainFrame.title:SetText(L["Catalog_Title"])
+--CatalogMainFrame.title = CatalogMainFrame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+--CatalogMainFrame.title:SetPoint("CENTER", CatalogMainFrame.TitleBg, "CENTER", 5, 0)
+--CatalogMainFrame.title:SetText(L["Catalog_Title"])
+
+if CatalogMainFrame.SetTitle then
+    CatalogMainFrame:SetTitle(L["Main_Screen_Title"])
+elseif CatalogMainFrame.TitleText then
+    CatalogMainFrame.TitleText:SetText(L["Main_Screen_Title"])
+end
+
+if not CatalogMainFrame.InsetBg then
+    
+    CatalogMainFrame.InsetBg = CreateFrame("Frame", nil, CatalogMainFrame, "InsetFrameTemplate")
+    CatalogMainFrame.InsetBg:SetPoint("TOPLEFT", 4, -60)
+    CatalogMainFrame.InsetBg:SetPoint("BOTTOMRIGHT", -6, 6)
+end
 
 _G["ACCatalogFrameName"] = CatalogMainFrame
 tinsert(UISpecialFrames, "ACCatalogFrameName")
@@ -102,7 +123,13 @@ end)
 -- =====================================================================
 -- ÁREA DE ROLAGEM E GRID HORIZONTAL
 -- =====================================================================
-local scrollFrame = CreateFrame("ScrollFrame", nil, CatalogMainFrame, "UIPanelScrollFrameTemplate")
+local scrollFrame
+if AchievementsCollector_Game_Flavor == "Forever" then 
+    scrollFrame = CreateFrame("ScrollFrame", nil, CatalogMainFrame, "ScrollFrameTemplate")
+else
+    scrollFrame = CreateFrame("ScrollFrame", nil, CatalogMainFrame, "UIPanelScrollFrameTemplate")
+end
+
 scrollFrame:SetPoint("TOPLEFT", CatalogMainFrame.InsetBg, "TOPLEFT", 10, -45)
 scrollFrame:SetPoint("BOTTOMRIGHT", CatalogMainFrame.InsetBg, "BOTTOMRIGHT", -30, 10)
 

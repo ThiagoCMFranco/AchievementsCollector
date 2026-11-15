@@ -1,7 +1,7 @@
 ## Interface: 16001, 50504, 120007, 120100
 ## Title: Achievements Collector
 ## Author: Thiago Franco (Topolino)
-## Version: 1.0.9
+## Version: 1.0.10
 ## X-Curse-Project-ID: 1673302
 ## SavedVariables: AchievementsCollectorDB
 ## SavedVariablesPerCharacter: AchievementsCollectorSharedDB
