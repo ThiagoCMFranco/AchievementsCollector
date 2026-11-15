@@ -32,14 +32,21 @@ local version, build, date, tocversion = GetBuildInfo()
 
 AchievementsCollector_TOCVersion = 0
 
+AchievementsCollector_Game_Flavor = "Other"
+AchievementsCollector_TOCVersion = tocversion
+
 if (tocversion >= 00000 and tocversion < 110000) then
 	AchievementsCollector_Game_Flavor = "Classic"
 	AchievementsCollector_TOCVersion = tocversion
-elseif (tocversion >= 110000) then
+end
+
+if (tocversion >= 110000) then
     AchievementsCollector_Game_Flavor = "Retail"
 	AchievementsCollector_TOCVersion = tocversion
-else
-	AchievementsCollector_Game_Flavor = "Other"
+end
+
+if (tocversion >= 16001 and tocversion < 16099) then
+    AchievementsCollector_Game_Flavor = "Forever"
 	AchievementsCollector_TOCVersion = tocversion
 end
 

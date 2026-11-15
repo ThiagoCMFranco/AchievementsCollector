@@ -39,7 +39,13 @@ AchievementsListsDictionary = {
     ["MOP-Classic-Pandaria-Legendary-Cloak"] = {7533, 7534, 8008, 7535, 7536, 8325},
     ["MN-Housing-Lumberjack"] = {62357, 62358, 62359, 62360, 62361, 62362, 62363, 62364, 62365, 62366, 62369, 62370,},
     ["MN-Professions"] = {62239, 42788, 62223, 62240, 42792, 62232, 62241, 42787, 62233, 62242, 42798, 62234, 62243, 42796, 62235, 62244, 42789, 62236, 62245, 42786, 62237, 62246, 42794, 62238, 62250, 42793, 62247, 62251, 42791, 62248, 62252, 42790, 62249, 42795, 42797, 61439,},
-
+    ["FV-Legacy-Progression"] = {61499, 61500, 61501, 61997, 61998, 61999, 63990, 63991, 63992, 63975, 63976, 63977, 63987, 63988, 63989, 63975, 63976, 63977, 63972, 63973, 63974, 63978, 63979, 63980, 63984, 63985, 63986, 63993, 63994, 63995},
+    ["FV-Legacy-Professions"] = {62028,62029,64013,62015,62016,64001,62024,64009,64010,62018,62019,62020,62012,62013,62014,62021,62022,62023},
+    ["FV-Legacy-Exploration"] = {62053, 62353, 62355},
+    ["FV-Legacy-Exploration-Dungeons"] = {64016, 64017, 64018},
+    ["FV-Legacy-Exploration-Kalimdor"] = {845, 750, 848, 850, 849, 62356, 63684, 847, 842, 854, 852, 844, 728, 853, 855, 736, 856, 851, 846, 857},
+    ["FV-Legacy-Exploration-Eastern-Kingdoms"] = {760, 765, 775, 627, 771, 772, 779, 62354, 769, 782, 770, 841, 761, 766, 777, 778, 776, 773, 780, 774, 781, 768, 802},
+    ["MN-Season-2-Delves-Labyrinths"] = {63724, 63716, 63723, 63721, 63722, 63727, 63728, 63720, 63717, 63718, 63719, 63863, 63864, 63865, 63846, 63847, 63848, 63849, 63850, 63851, 63852, 63853, 63715, 64039, 64118}
     
 }
 
@@ -58,6 +64,13 @@ AchievementsListsDictionaryNames = {
     ["MOP-Classic-Pandaria-Legendary-Cloak"] = L_Catalog_Titles["MOP-Classic-Pandaria-Legendary-Cloak"],
     ["MN-Housing-Lumberjack"] = L_Catalog_Titles["MN-Housing-Lumberjack"],
     ["MN-Professions"] = L_Catalog_Titles["MN-Professions"],
+    ["FV-Legacy-Progression"] = L_Catalog_Titles["FV-Legacy-Progression"],
+    ["FV-Legacy-Professions"] = L_Catalog_Titles["FV-Legacy-Professions"],
+    ["FV-Legacy-Exploration"] = L_Catalog_Titles["FV-Legacy-Exploration"],
+    ["FV-Legacy-Exploration-Dungeons"] = L_Catalog_Titles["FV-Legacy-Exploration-Dungeons"],
+    ["FV-Legacy-Exploration-Kalimdor"] = L_Catalog_Titles["FV-Legacy-Exploration-Kalimdor"],
+    ["FV-Legacy-Exploration-Eastern-Kingdoms"] = L_Catalog_Titles["FV-Legacy-Exploration-Eastern-Kingdoms"],
+    ["MN-Season-2-Delves-Labyrinths"] = L_Catalog_Titles["MN-Season-2-Delves-Labyrinths"],
     
 }
 
@@ -76,6 +89,13 @@ AchievementsListsDictionaryDetails = {
     ["MOP-Classic-Pandaria-Legendary-Cloak"] = L_Catalog_Description["MOP-Classic-Pandaria-Legendary-Cloak"],
     ["MN-Housing-Lumberjack"] = L_Catalog_Description["MN-Housing-Lumberjack"],
     ["MN-Professions"] = L_Catalog_Description["MN-Professions"],
+    ["FV-Legacy-Progression"] = L_Catalog_Description["FV-Legacy-Progression"],
+    ["FV-Legacy-Professions"] = L_Catalog_Description["FV-Legacy-Professions"],
+    ["FV-Legacy-Exploration"] = L_Catalog_Description["FV-Legacy-Exploration"],
+    ["FV-Legacy-Exploration-Dungeons"] = L_Catalog_Description["FV-Legacy-Exploration-Dungeons"],
+    ["FV-Legacy-Exploration-Kalimdor"] = L_Catalog_Description["FV-Legacy-Exploration-Kalimdor"],
+    ["FV-Legacy-Exploration-Eastern-Kingdoms"] = L_Catalog_Description["FV-Legacy-Exploration-Eastern-Kingdoms"],
+    ["MN-Season-2-Delves-Labyrinths"] = L_Catalog_Description["MN-Season-2-Delves-Labyrinths"],
 
 }
 
@@ -94,6 +114,13 @@ AchievementsListsDictionaryCover = {
     ["MOP-Classic-Pandaria-Legendary-Cloak"] = 7533,
     ["MN-Housing-Lumberjack"] = 62357,
     ["MN-Professions"] = 61439,
+    ["FV-Legacy-Progression"] = 0,
+    ["FV-Legacy-Professions"] = 63999,
+    ["FV-Legacy-Exploration"] = 62053,
+    ["FV-Legacy-Exploration-Dungeons"] = 64018,
+    ["FV-Legacy-Exploration-Kalimdor"] = 62355,
+    ["FV-Legacy-Exploration-Eastern-Kingdoms"] =  62353,
+    ["MN-Season-2-Delves-Labyrinths"] = 63716,
     
 }
 
@@ -112,5 +139,12 @@ AchievementsListsDictionaryGameVersion = {
     ["MOP-Classic-Pandaria-Legendary-Cloak"] = "Classic",
     ["MN-Housing-Lumberjack"] = "Retail",
     ["MN-Professions"] = "Retail",
+    ["FV-Legacy-Progression"] = "Forever",
+    ["FV-Legacy-Professions"] = "Forever",
+    ["FV-Legacy-Exploration"] = "Forever",
+    ["FV-Legacy-Exploration-Dungeons"] = "Forever",
+    ["FV-Legacy-Exploration-Kalimdor"] = "Forever",
+    ["FV-Legacy-Exploration-Eastern-Kingdoms"] = "Forever",
+    ["MN-Season-2-Delves-Labyrinths"] = "Retail",
     
 }
