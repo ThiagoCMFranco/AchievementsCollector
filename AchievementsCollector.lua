@@ -41,12 +41,51 @@ AchievementsListsNames = {}
 
 AchievementsListsOrder = AchievementsListsOrder or {}
 
-local Tracker = CreateFrame("Frame", "AchievementsCollectorFrame", UIParent, "BasicFrameTemplateWithInset")
+-- =====================================================================
+-- Identifica Versão do Jogo
+-- =====================================================================
+local version, build, date, tocversion = GetBuildInfo()
+
+AchievementsCollector_TOCVersion = 0
+
+AchievementsCollector_Game_Flavor = "Other"
+AchievementsCollector_TOCVersion = tocversion
+
+if (tocversion >= 00000 and tocversion < 110000) then
+	AchievementsCollector_Game_Flavor = "Classic"
+	AchievementsCollector_TOCVersion = tocversion
+end
+
+if (tocversion >= 110000) then
+    AchievementsCollector_Game_Flavor = "Retail"
+	AchievementsCollector_TOCVersion = tocversion
+end
+
+if (tocversion >= 16001 and tocversion < 16099) then
+    AchievementsCollector_Game_Flavor = "Forever"
+	AchievementsCollector_TOCVersion = tocversion
+end
+
+local Tracker
+if AchievementsCollector_Game_Flavor == "Forever" then 
+        Tracker = CreateFrame("Frame", "AchievementsCollectorFrame", UIParent, "PortraitFrameTemplate")
+
+        ButtonFrameTemplate_HidePortrait(Tracker)
+    else
+        Tracker = CreateFrame("Frame", "AchievementsCollectorFrame", UIParent, "BasicFrameTemplateWithInset")
+    end
+
 Tracker:SetSize(770, 500)
 Tracker:SetPoint("CENTER")
 Tracker:Hide()
 
-Tracker.TitleText:SetText(L["Main_Screen_Title"])
+--Tracker.TitleText:SetText(L["Main_Screen_Title"])
+
+if Tracker.SetTitle then
+    Tracker:SetTitle(L["Main_Screen_Title"])
+elseif Tracker.TitleText then
+    Tracker.TitleText:SetText(L["Main_Screen_Title"])
+end
 
 Tracker:SetMovable(true)
 Tracker:EnableMouse(true)
@@ -57,6 +96,13 @@ Tracker:SetScript("OnShow", function () PlaySound(SOUNDKIT.IG_CHARACTER_INFO_OPE
 Tracker:SetScript("OnHide", function () PlaySound(SOUNDKIT.IG_CHARACTER_INFO_CLOSE) end)
 Tracker:SetScript("OnDragStop", Tracker.StopMovingOrSizing)
 Tracker:SetFrameStrata("LOW")
+
+if not Tracker.InsetBg then
+    -- Se por acaso o template não criou o Inset, criamos um frame filho para isso
+    Tracker.InsetBg = CreateFrame("Frame", nil, Tracker, "InsetFrameTemplate") -- ou criamos manualmente
+    Tracker.InsetBg:SetPoint("TOPLEFT", 4, -60)
+    Tracker.InsetBg:SetPoint("BOTTOMRIGHT", -6, 6)
+end
 
 _G["ACTrackerFrameName"] = Tracker
 tinsert(UISpecialFrames, "ACTrackerFrameName")
@@ -121,7 +167,12 @@ CategoryPanel:SetBackdrop({
 CategoryPanel:SetBackdropColor(0.05, 0.05, 0.05, 0.8)
 CategoryPanel:SetBackdropBorderColor(0.3, 0.3, 0.3, 1)
 
-local CategoryScrollFrame = CreateFrame("ScrollFrame", nil, CategoryPanel, "UIPanelScrollFrameTemplate")
+local CategoryScrollFrame
+if AchievementsCollector_Game_Flavor == "Forever" then 
+    CategoryScrollFrame = CreateFrame("ScrollFrame", nil, CategoryPanel, "ScrollFrameTemplate")
+else
+    CategoryScrollFrame = CreateFrame("ScrollFrame", nil, CategoryPanel, "UIPanelScrollFrameTemplate")
+end
 CategoryScrollFrame:SetPoint("TOPLEFT", CategoryPanel, "TOPLEFT", 6, -6)
 CategoryScrollFrame:SetPoint("BOTTOMRIGHT", CategoryPanel, "BOTTOMRIGHT", -26, 34)
 
@@ -130,7 +181,13 @@ CategoryContent:SetSize(142, 1)
 CategoryScrollFrame:SetScrollChild(CategoryContent)
 
 -- --- PAINEL PRINCIPAL (Lista de Conquistas) ---
-local ContentScrollFrame = CreateFrame("ScrollFrame", nil, Tracker, "UIPanelScrollFrameTemplate")
+local ContentScrollFrame
+if AchievementsCollector_Game_Flavor == "Forever" then 
+    ContentScrollFrame = CreateFrame("ScrollFrame", nil, Tracker, "ScrollFrameTemplate")
+else
+    ContentScrollFrame = CreateFrame("ScrollFrame", nil, Tracker, "UIPanelScrollFrameTemplate")
+end
+
 ContentScrollFrame:SetPoint("TOPLEFT", CategoryPanel, "TOPRIGHT", 6, 0)
 ContentScrollFrame:SetPoint("BOTTOMRIGHT", Tracker.InsetBg, "BOTTOMRIGHT", -24, 40)
 
@@ -173,7 +230,12 @@ EmptyAchievementsNotice:Hide()
 EmptyAchievementsNotice.Icon = EmptyAchievementsNotice:CreateTexture(nil, "ARTWORK")
 EmptyAchievementsNotice.Icon:SetSize(48, 48)
 EmptyAchievementsNotice.Icon:SetPoint("CENTER", EmptyAchievementsNotice, "CENTER", 0, 35)
-EmptyAchievementsNotice.Icon:SetAtlas("UI-Achievement-Shield-NoPoints")
+if AchievementsCollector_Game_Flavor == "Forever" then 
+    EmptyAchievementsNotice.Icon:SetAtlas("UI-Achievement-Shield-1")
+else
+    EmptyAchievementsNotice.Icon:SetAtlas("UI-Achievement-Guild-Filigree-Right")
+end
+
 EmptyAchievementsNotice.Icon:SetSize(64, 64)
 
 EmptyAchievementsNotice.Text = EmptyAchievementsNotice:CreateFontString(nil, "OVERLAY", "GameFontNormal")
