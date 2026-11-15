@@ -29,7 +29,7 @@ local githubLink = "https://github.com/ThiagoCMFranco/AchievementsCollector"
 
 -- Lista de versões que estão em fase de testes
 local versoesEmTeste = {
-    "1.60.1",
+    --"1.60.1",
 }
 
 function ACLFunctions.VerificarVersaoDoJogo(silent)

@@ -21,6 +21,13 @@ L_Catalog_Titles["MOP-Classic-Pandaria-Lorewalker"] = "Historiador de Pandaria"
 L_Catalog_Titles["MOP-Classic-Pandaria-Legendary-Cloak"] = "Missões de Whrathion - Capa Lendária"
 L_Catalog_Titles["MN-Housing-Lumberjack"] = "Lenhador"
 L_Catalog_Titles["MN-Professions"] = "Profissões de Midnight"
+L_Catalog_Titles["FV-Legacy-Progression"] = "Progressão"
+L_Catalog_Titles["FV-Legacy-Professions"] = "Profissões"
+L_Catalog_Titles["FV-Legacy-Exploration"] = "Exploração"
+L_Catalog_Titles["FV-Legacy-Exploration-Dungeons"] = "Exploração de Masmorras"
+L_Catalog_Titles["FV-Legacy-Exploration-Kalimdor"] = "Exploração de Kalimdor"
+L_Catalog_Titles["FV-Legacy-Exploration-Eastern-Kingdoms"] = "Exploração dos Reinos do Leste"
+L_Catalog_Titles["MN-Season-2-Delves-Labyrinths"] = "Labirinto de Kindo'Jan"
 
 L_Catalog_Description["MN-Season-2-Myth-Portals"] = "Conquistas relacionadas ao caminho do herói da temporada 2 de Midnight."
 L_Catalog_Description["MN-Season-2-Delves"] = "Conquistas de imersões da segunda temporada de Midnight."
@@ -36,7 +43,13 @@ L_Catalog_Description["MOP-Classic-Pandaria-Lorewalker"] = "Conquistas de missõ
 L_Catalog_Description["MOP-Classic-Pandaria-Legendary-Cloak"] = "Conquistas da campanha de Wrathion em Pandaria - Capa Lendária."
 L_Catalog_Description["MN-Housing-Lumberjack"] = "Conquistas de coleta de madeira para confecção de itens de moradia."
 L_Catalog_Description["MN-Professions"] = "Conquistas de progressão de profissões de Midnight."
-
+L_Catalog_Description["FV-Legacy-Progression"] = "Pontos de conquistas de legado relacionados a progressão"
+L_Catalog_Description["FV-Legacy-Professions"] = "Pontos de conquistas de legado relacionados a profissões"
+L_Catalog_Description["FV-Legacy-Exploration"] = "Pontos de conquistas de legado relacionados a exploração"
+L_Catalog_Description["FV-Legacy-Exploration-Dungeons"] = "Pontos de conquista de legado relacionados à exploração de masmorras"
+L_Catalog_Description["FV-Legacy-Exploration-Kalimdor"] = "Pontos de conquista de legado relacionados à exploração de Kalimdor"
+L_Catalog_Description["FV-Legacy-Exploration-Eastern-Kingdoms"] = "Pontos de conquista de legado relacionados à exploração dos Reinos do Leste"
+L_Catalog_Description["MN-Season-2-Delves-Labyrinths"] = "Conquistas relacionadas a mega imersão Labirinto de Kindo'jan"
 
 
 

@@ -83,7 +83,7 @@ local function ShowMyCustomContextMenu(anchorFrame, achievementID)
                     text = L["External_Link_Message"],
                     button1 = L["button_Close"],
                     hasEditBox = true,
-                    editBoxWidth = 200,
+                    editBoxWidth = 300,
                     OnShow = function(self, data)
                         if self.EditBox then
                             self.EditBox:SetText((AchievementsCollectorDB.ExternalLink or 'https://www.wowhead.com/achievement=') .. tostring(data))
